@@ -1,0 +1,263 @@
+%%% PREAMBLE %%%
+
+% Strict mode
+
+\RequirePackage[l2tabu, orthodox]{nag} % Warn when using deprecated constructs
+
+% Document class and packages
+
+\documentclass[10pt,a4paper,parskip,fleqn]{scrartcl}
+\usepackage[a4paper,vmargin={30mm},hmargin={30mm}]{geometry} % Page margins
+\usepackage[ngerman]{babel} % New German hyphenation (multilingual support)
+\usepackage[utf8x]{inputenc} % Unicode support
+\usepackage{graphicx} % Graphics support
+\usepackage{enumitem}
+\usepackage{verbatimbox}
+
+% Font configuration
+
+\usepackage[sc]{mathpazo} % Use palatino font
+\usepackage[T1]{fontenc} % Use correct font encoding
+\usepackage[babel=true]{microtype} % Micro-typographic optimizations
+\addtokomafont{disposition}{\rmfamily} % Set palatino as heading font
+
+% Section Titles
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{§ \thesection{} -- }{0em}{}
+
+% Numbering
+
+\renewcommand*{\labelenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\labelenumii}{\labelenumi.\arabic{enumii}}
+
+% Easier enumerations
+
+\newcommand{\ol}{\begin{enumerate}[itemsep=-0.2em,topsep=-0.2em]}
+\newcommand{\lo}{\end{enumerate}}
+\newcommand{\li}{\item}
+
+\newcommand{\newCommandName}{text to insert}
+\newcommand\lastChanged{TODO}
+\newcommand\founded{TODO}
+
+%%% TITLEPAGE %%%
+
+\title{\Huge Vereinsstatuten}
+\subject{probe-rs}
+\date{Stand: \lastChanged}
+
+
+
+%%% HEADER / FOOTER %%%
+
+\usepackage{fancyhdr} % Fancy headers
+\usepackage{lastpage} % Page numbering
+
+% Capture title and author
+\makeatletter
+\let\Date\@date
+\makeatother
+
+% Fancy headers configuration
+\pagestyle{fancy}
+\fancyhead{} % Clear all header fields
+\fancyhead[LO,LE]{\bfseries Vereinsstatuten probe-rs}
+\fancyhead[RO,RE]{\bfseries \Date{}}
+\fancyfoot{} % Clear all footer fields
+\fancyfoot[CO,CE]{Seite \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Better footer
+\cfoot{Seite \thepage\ von \pageref{LastPage}}
+
+
+%%% MAIN DOCUMENT %%%
+
+\begin{document}
+
+\begin{titlepage}
+
+	\maketitle
+	\thispagestyle{empty} % Don't start page numbers on this page
+
+  \begin{center}
+
+		\vspace{1cm}
+
+		\theverbbox
+
+		\vfill
+
+		\large Beschlossen an der Gründungsversammlung vom \founded.\\
+		\vspace{1em}
+		\large Zuletzt geändert am .
+
+		\vspace{1.5cm}
+
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			TODO, Präsident
+		\end{minipage}
+		\begin{minipage}[t]{0.49\textwidth}
+			\center
+			\rule{5cm}{0.2mm}\\
+			TODO, Kassier
+		\end{minipage}
+
+  \end{center}
+
+\end{titlepage}
+
+
+\section{Name und Sitz}
+
+\ol
+	\li Unter dem Namen \textit{probe-rs} besteht ein Verein im Sinne von Art. 60
+	ff. ZGB.
+	\li Der Sitz des Vereins ist TODO. Für alle Rechtsstreitigkeiten
+	gilt schweizerisches Recht.
+\lo
+
+
+\section{Vereinszweck}
+
+\ol
+	\li Der Verein verfolgt folgende Ziele:
+    \ol
+      \li Organisation der Entwicklung des probe-rs Ökosystems.
+      \li Organisation der Geschäftstätigkeit des probe-rs Projektes.
+	  	Dies beinhaltet unter anderem die Verwaltung und Verteilung von Sponsorengeldern
+		  sowie die Verkäufe von Hardware.
+    \lo
+\lo
+
+
+\section{Mitgliedschaft}
+
+\ol
+  \li Aktivmitglied mit Stimmberechtigung kann jede natürliche Person werden,
+	die sich mit dem Vereinszweck identifizieren kann.
+	\li Passivmitglied ohne Stimmberechtigung kann jede natürliche und juristische
+	Person werden.
+	\li Aufnahmegesuche sind an ein Vorstandsmitglied zur richten; über die
+	Aufnahme entscheidet der Vorstand.
+	\li Die Mitgliedschaft erlischt
+		\ol
+			\li bei natürlichen Personen durch Austritt, Ausschluss oder Tod
+			\li bei juristischen Personen durch Austritt, Ausschluss oder Auflösung
+		\lo
+\lo
+
+
+\section{Austritt und Ausschluss}
+
+\ol
+	\li Ein Vereinsaustritt ist per Ende des Vereinsjahrs möglich. Das
+	Austrittsschreiben muss schriftlich an den Vorstand gerichtet werden.
+	\li Ein Mitglied kann jederzeit ohne Grundangabe aus dem Verein ausgeschlossen
+	werden. Der Vorstand fällt den Ausschlussentscheid; das Mitglied kann den
+	Ausschlussentscheid an die Vereinsversammlung weiterziehen.
+\lo
+
+
+\section{Organe des Vereins}
+
+\ol
+	\li Die Organe des Vereins sind:
+		\ol
+			\li die Vereinsversammlung
+			\li der Vorstand
+		\lo
+\lo
+
+
+\section{Die Vereinsversammlung}
+
+\ol
+	\li Das oberste Organ des Vereins ist die Vereinsversammlung. Eine ordentliche
+	Vereinsversammlung findet jährlich statt.
+	\li Zur Vereinsversammlung werden die Mitglieder drei Wochen im Voraus
+	unter Beilage der Traktandenliste schriftlich eingeladen.
+	\li Die Vereinsversammlung hat die folgenden unentziehbaren Aufgaben:
+		\ol
+			\li Wahl bzw. Abwahl des Vorstandes
+			\li Festsetzung und Änderung der Statuten
+			\li Abnahme der Jahresrechung
+			\li Beschluss über das Jahresbudget
+			\li Festsetzung der Mitgliederbeiträge
+			\li Behandlung der Ausschlussrekurse
+		\lo
+	\li An der Vereinsversammlung besitzt jedes Aktivmitglied eine Stimme; die
+	Beschlussfassung erfolgt mit einfachem Mehr.
+	\li Bei Stimmengleichheit entscheidet der Präsident mit Stichentscheid.
+	\li Passivmitglieder werden zur Vereinsversammlung eingeladen, besitzen jedoch
+	kein Stimmrecht.
+\lo
+
+
+\section{Der Vorstand}
+
+\ol
+	\li Der Vorstand besteht aus mindestens zwei Personen, nämlich dem Präsidenten
+	und dem Kassier.
+	\li Der Vorstand vertritt den Verein nach aussen und führt die laufenden
+	Geschäfte.
+\lo
+
+
+\section{Finanzen}
+
+\ol
+	\li Der Mitgliederbeitrag wird jährlich erhoben. Die Höhe des
+	Mitgliederbeitrags wird jährlich von der Vereinsversammlung festgelegt.
+	\li Tritt ein Mitglied während des Vereinsjahrs bei, wird der
+	Mitgliederbeitrag pro rata für die verbleibenden Monate erhoben.
+	\li Das Vereinsjahr beginnt am TODO und endet am TODO.
+\lo
+
+
+\section{Unterschrift, Haftung}
+
+\ol
+	\li Der Verein wird verpflichtet durch die Einzelunterschrift, ausgenommen das
+	Eingehen von Dauerschuldverhältnissen kollektiv durch den Präsidenten zusammen
+	mit einem weiteren Mitglied des Vorstandes.
+	\li Die Aufnahme von Krediten sowie das Leisten von Bürgschaften bedürfen
+	zusätzlich der Bewilligung durch die Vereinsversammlung.
+	\li Für die Schulden des Vereins haftet nur das Vereinsvermögen. Eine
+	persönliche Haftung der Mitglieder ist ausgeschlossen.
+\lo
+
+
+\section{Statutenänderungen}
+
+\ol
+	\li Die vorliegenden Statuten können an einer Vereinsversammlung abgeändert werden,
+	wenn eine Mehrheit der anwesenden stimmberechtigten Mitglieder dem Änderungsvorschlag zustimmt.
+\lo
+
+
+\section{Auflösung des Vereins}
+
+\ol
+	\li Die Auflösung des Vereins kann an einer Vereinsversammlung mit absoluter
+	Mehrheit der anwesenden stimmberechtigten Mitglieder beschlossen werden.
+	\li Bei einer Auflösung des Vereins fällt das Vereinsvermögen an eine
+	Institution, welche den gleichen oder einen ähnlichen Zweck verfolgt.
+\lo
+
+
+\section{Übergangs- und Vollzugsbestimmungen}
+
+\ol
+	\li Diese Statuten sind an der Gründungsversammlung vom \founded\ 
+	angenommen worden und sind mit diesem Datum in Kraft getreten.
+	\li Bei Unklarheiten über die Auslegung dieser Statuten entscheidet der
+	Vorstand abschliessend.
+\lo
+
+
+\end{document}
